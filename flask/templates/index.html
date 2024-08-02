@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Generator and Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script> <!-- CKEditor CDN -->
+</head>
+<body>
+    <div class="container">
+        <h1>Article Generator</h1>
+        <form id="generateForm">
+            <input type="textarea" id="topic" placeholder="Enter topic">
+            <button type="submit" id="generateButton">Generate content</button>
+        </form>
+
+        <div id="articleContainer" class="article-container"></div>
+
+        <!-- Template Selection Section -->
+        <div id="templateOptions" style="display: none;">
+            <h3>Select a Template</h3>
+            <label>
+                <input type="radio" name="template" value="template1" checked> Template 1
+            </label>
+            <label>
+                <input type="radio" name="template" value="template2"> Template 2
+            </label>
+            <button id="applyTemplateButton">Apply Template</button>
+        </div>
+        <br>
+        <button id="editButton" style="display: none;">Edit with Text Editor</button> <!-- New Button -->
+        <div id="editorContainer" style="display: none;">
+            <textarea id="editor"></textarea> <!-- CKEditor Textarea -->
+        </div>
+
+        <button id="saveEditsButton" style="display: none;">Save Edits</button>
+        <button id="regenerateParagraphButton" style="display: none;">Regenerate Paragraph</button>
+        <form id="uploadImageForm" style="display: none;">
+            <input type="file" capture="user" accept="image/*" id="imageUpload"><button type="submit">Upload Image</button><br>
+            <button id="aiGenerateImageButton">AI Generate Image</button>
+        </form>
+        <button id="downloadButton" style="display: none;">Download Content</button>
+    </div>
+
+    <!-- Chatbot Section -->
+    <div class="main-div">
+        <div class="menuToggle" onclick="toggleChat()">
+            <i class='bx bxs-message-rounded-dots'></i>
+        </div>
+        <div class="container2">
+            <div class="top-part">
+                <div class="agent-details">
+                    <img src="/static/chatbot.png" alt="Chatbot">
+                    <div class="agent-text">
+                        <h3>&nbsp;Scrptailor.AI</h3>
+                        <p>&nbsp;Agent <span>&nbsp;(Online)</span></p>
+                    </div>
+                </div>
+                <i id='cross' class='bx bxs-message-alt-x' onclick="toggleChat()"></i>
+            </div>
+            <div id="chat-box" class="chat-section"></div>
+            <div class="input-container">
+                <input type="text" id="user-input" placeholder="Type your message here..." onkeydown="if (event.key === 'Enter') sendMessage()">
+                <button class='button2' onclick="sendMessage()"><i class='bx bx-send'></i></button>
+                <button class='button2' onclick="startRecognition()"><i class='bx bxs-microphone'></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        // Chatbot functionality
+        function toggleChat() {
+            const container = document.querySelector('.container2');
+            container.classList.toggle('active');
+        }
+
+        function getCurrentTime() {
+            const now = new Date();
+            return now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        }
+
+        async function sendMessage() {
+            const inputBox = document.getElementById('user-input');
+            const chatBox = document.getElementById('chat-box');
+            const userMessage = inputBox.value;
+            if (userMessage.trim() === '') return;
+            inputBox.value = '';
+
+            const currentTime = getCurrentTime();
+
+            const userMessageElement = document.createElement('div');
+            userMessageElement.className = 'right-part';
+            userMessageElement.innerHTML = `<p>${userMessage}</p><span>${currentTime}</span>`;
+            chatBox.appendChild(userMessageElement);
+
+            const typingIndicator = document.createElement('div');
+            typingIndicator.className = 'left-part';
+            typingIndicator.innerHTML = '<p class="typing-indicator">typing...</p>';
+            chatBox.appendChild(typingIndicator);
+
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            const response = await fetch('/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: userMessage })
+            });
+            const responseData = await response.json();
+
+            setTimeout(() => {
+                chatBox.removeChild(typingIndicator);
+                const botMessageElement = document.createElement('div');
+                botMessageElement.className = 'left-part';
+                botMessageElement.innerHTML = `<div class="agent-chat"><img src="/static/chatbot.png" alt=""><p>${responseData.response}</p></div>`;
+                chatBox.appendChild(botMessageElement);
+
+                speak(responseData.response);  // Call the TTS function
+
+                if (responseData.needs_training) {
+                    const newAnswer = prompt("Bot: Sorry, I don't know the answer. Can you teach me?");
+                    if (newAnswer && newAnswer.toLowerCase() !== 'skip') {
+                        fetch('/train', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ message: userMessage, answer: newAnswer })
+                        }).then(() => {
+                            const learnedMessageElement = document.createElement('div');
+                            learnedMessageElement.className = 'left-part';
+                            learnedMessageElement.innerHTML = `<div class="agent-chat"><img src="/static/chatbot.png" alt=""><p>Thank you! I learned a new response!</p></div>`;
+                            chatBox.appendChild(learnedMessageElement);
+                            chatBox.scrollTop = chatBox.scrollHeight;
+                        });
+                    }
+                }
+
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 1500); 
+        }
+
+        function speak(text) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                speechSynthesis.speak(utterance);
+            } else {
+                console.warn("Text-to-Speech not supported.");
+            }
+        }
+
+        function startRecognition() {
+            if ('webkitSpeechRecognition' in window) {
+                const recognition = new webkitSpeechRecognition();
+                recognition.lang = 'en-US';
+                recognition.interimResults = false;
+                recognition.onresult = (event) => {
+                    const transcript = event.results[0][0].transcript;
+                    document.getElementById('user-input').value = transcript;
+                    sendMessage();
+                };
+                recognition.onerror = (event) => {
+                    console.error(event.error);
+                };
+                recognition.start();
+            } else {
+                console.warn("Speech-to-Text not supported.");
+            }
+        }
+
+        // Article generator functionality
+        document.getElementById('generateForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            generateArticle();
+        });
+
+        function generateArticle() {
+            const articleTopic = document.getElementById('topic').value;
+            if (articleTopic.trim() === "") return;
+
+            const articleContentDiv = document.getElementById('articleContainer');
+            articleContentDiv.innerHTML = "Generating article...";
+
+            fetch('/generate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ topic: articleTopic }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                articleContentDiv.innerHTML = data.response;
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>

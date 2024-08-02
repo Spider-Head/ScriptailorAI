@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Generator</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="navbar">
+        <div id="container">
+            <div class="highlight"></div>
+            
+            <div class="outer">
+                <div class="inner">
+                    <div class="icon">1</div>
+                    <div class="text">Home</div>
+                </div>
+            </div>
+
+            <div class="outer">
+                <div class="inner">
+                    <div class="icon">2</div>
+                    <div class="text">Services</div>
+                </div>
+            </div>
+
+            <div class="outer">
+                <div class="inner">
+                    <div class="icon">3</div>
+                    <div class="text">Contact</div>
+                </div>
+            </div>
+            
+            <div class="outer">
+                <div class="inner">
+                    <div class="icon">4</div>
+                    <div class="text">testimonials</div>
+                </div>
+            </div>
+            
+            <div class="outer">
+                <div class="inner">
+                    <div class="icon">5</div>
+                    <div class="text">FAQ</div>
+                </div>
+            </div>
+            
+            <div class="outer">
+                <div class="inner">
+                    <div class="icon">6</div>
+                    <div class="text">About Us</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- OL Circle Cards Section -->
+        <section class="hero">
+            <h1>Welcome to Our AI Content Generation Tool</h1>
+            <details>
+                <summary>What is AI Content Generation?</summary>
+                <p>AI Content Generation is a process of using artificial intelligence to generate content such as articles, blogs, stories, etc.</p>
+            </details>
+            <!-- OL Circle Cards Section -->
+            <h1>Scriptailor.AI</h1>
+            <ol class="circle-cards">
+                <li id="article-card">
+                    <div class="title">Articles</div>
+                    <div class="descr">Create engaging and informative articles easily with our AI-driven tool.</div>
+                </li>
+                <li id="blog-card">
+                    <div class="title">Blogs</div>
+                    <div class="descr">Create engaging and informative blog posts easily with our AI-driven tool.</div>
+                </li>
+                <li id="report-card">
+                    <div class="title">Reports</div>
+                    <div class="descr">Create engaging and informative reports easily with our AI-driven tool.</div>
+                </li>
+                <li id="story-card">
+                    <div class="title">Story</div>
+                    <div class="descr">Create engaging and informative stories easily with our AI-driven tool.</div>
+                </li>
+                <li id="script-card">
+                    <div class="title">Scripts</div>
+                    <div class="descr">Create engaging and informative scripts easily with our AI-driven tool.</div>
+                </li>
+                <li id="email-card">
+                    <div class="title">Emails</div>
+                    <div class="descr">Create engaging and informative emails easily with our AI-driven tool.</div>
+                </li>
+            </ol>
+        </section>
+        
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('article-card').addEventListener('click', function () {
+                window.location.href = 'http://localhost:5000';
+            });
+        });
+    </script>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,348 @@
+{
+    "questions": [
+      {
+        "question": "hello",
+        "answer": "Hey there!"
+      },
+      {
+        "question": "How are you?",
+        "answer": "I am fine. What's about you?"
+      },
+      {
+        "question": "how are you?",
+        "answer": "I am fine. What's about you?"
+      },
+      {
+        "question": "I am also fine.",
+        "answer": "That's great!"
+      },
+      {
+        "question": "do you know that you are a bot?",
+        "answer": "Yes, I know."
+      },
+      {
+        "question": "Do you know that you are a bot",
+        "answer": "Yes, I know."
+      },
+      {
+        "question": "what's your name?",
+        "answer": "I am SubhamGPT."
+      },
+      {
+        "question": "who are you?",
+        "answer": "I am SubhamGPT."
+      },
+      {
+        "question": "how do you do?",
+        "answer": "I'm fine."
+      },
+      {
+        "question": "tell me a joke",
+        "answer": "Why do couples never go to the gym?\n\nBecause some relationships don't work out!"
+      },
+      {
+        "question": "who is mark zuckerberg?",
+        "answer": "He is the founder of Facebook."
+      },
+      {
+        "question": "do you know shruti?",
+        "answer": "Shruti is our CR."
+      },
+      {
+        "question": "hey",
+        "answer": "Yeah, I am here. How can I assist you?"
+      },
+      {
+        "question": "who is shruti?",
+        "answer": "Shruti is our CR."
+      },
+      {
+        "question": "what is the capital of France?",
+        "answer": "The capital of France is Paris."
+      },
+      {
+        "question": "who is the president of the United States?",
+        "answer": "As of 2024, the President of the United States is Joe Biden."
+      },
+      {
+        "question": "what is the speed of light?",
+        "answer": "The speed of light is approximately 299,792 kilometers per second."
+      },
+      {
+        "question": "who wrote 'Pride and Prejudice'?",
+        "answer": "Pride and Prejudice was written by Jane Austen."
+      },
+      {
+        "question": "what is the tallest mountain in the world?",
+        "answer": "The tallest mountain in the world is Mount Everest."
+      },
+      {
+        "question": "who painted the Mona Lisa?",
+        "answer": "The Mona Lisa was painted by Leonardo da Vinci."
+      },
+      {
+        "question": "what is the square root of 64?",
+        "answer": "The square root of 64 is 8."
+      },
+      {
+        "question": "how many continents are there?",
+        "answer": "There are seven continents: Africa, Antarctica, Asia, Europe, North America, Oceania, and South America."
+      },
+      {
+        "question": "what is the largest ocean?",
+        "answer": "The largest ocean is the Pacific Ocean."
+      },
+      {
+        "question": "what is the chemical symbol for water?",
+        "answer": "The chemical symbol for water is H2O."
+      },
+      {
+        "question": "who discovered gravity?",
+        "answer": "Isaac Newton is credited with the discovery of gravity."
+      },
+      {
+        "question": "what is the boiling point of water?",
+        "answer": "The boiling point of water is 100 degrees Celsius at standard atmospheric pressure."
+      },
+      {
+        "question": "who was the first person to walk on the moon?",
+        "answer": "Neil Armstrong was the first person to walk on the moon."
+      },
+      {
+        "question": "what is the largest planet in our solar system?",
+        "answer": "The largest planet in our solar system is Jupiter."
+      },
+      {
+        "question": "who wrote 'To Kill a Mockingbird'?",
+        "answer": "To Kill a Mockingbird was written by Harper Lee."
+      },
+      {
+        "question": "what is the longest river in the world?",
+        "answer": "The longest river in the world is the Nile River."
+      },
+      {
+        "question": "who developed the theory of relativity?",
+        "answer": "The theory of relativity was developed by Albert Einstein."
+      },
+      {
+        "question": "what is the currency of Japan?",
+        "answer": "The currency of Japan is the Yen."
+      },
+      {
+        "question": "who was the first president of the United States?",
+        "answer": "The first president of the United States was George Washington."
+      },
+      {
+        "question": "what is the smallest country in the world?",
+        "answer": "The smallest country in the world is Vatican City."
+      },
+      {
+        "question": "who wrote '1984'?",
+        "answer": "'1984' was written by George Orwell."
+      },
+      {
+        "question": "what is the human body's largest organ?",
+        "answer": "The skin is the largest organ of the human body."
+      },
+      {
+        "question": "what is the capital of Australia?",
+        "answer": "The capital of Australia is Canberra."
+      },
+      {
+        "question": "who painted 'Starry Night'?",
+        "answer": "'Starry Night' was painted by Vincent van Gogh."
+      },
+      {
+        "question": "what is the powerhouse of the cell?",
+        "answer": "The powerhouse of the cell is the mitochondrion."
+      },
+      {
+        "question": "who is the author of 'Harry Potter'?",
+        "answer": "The author of 'Harry Potter' is J.K. Rowling."
+      },
+      {
+        "question": "what is the primary language spoken in Brazil?",
+        "answer": "The primary language spoken in Brazil is Portuguese."
+      },
+      {
+        "question": "who discovered penicillin?",
+        "answer": "Penicillin was discovered by Alexander Fleming."
+      },
+      {
+        "question": "what is the tallest building in the world?",
+        "answer": "The tallest building in the world is the Burj Khalifa in Dubai."
+      },
+      {
+        "question": "who was the first woman to fly solo across the Atlantic Ocean?",
+        "answer": "Amelia Earhart was the first woman to fly solo across the Atlantic Ocean."
+      },
+      {
+        "question": "what is the chemical symbol for gold?",
+        "answer": "The chemical symbol for gold is Au."
+      },
+      {
+        "question": "what is the capital of Italy?",
+        "answer": "The capital of Italy is Rome."
+      },
+      {
+        "question": "who is known as the father of computers?",
+        "answer": "Charles Babbage is known as the father of computers."
+      },
+      {
+        "question": "what is the main ingredient in guacamole?",
+        "answer": "The main ingredient in guacamole is avocado."
+      },
+      {
+        "question": "who was the first person to reach the South Pole?",
+        "answer": "Roald Amundsen was the first person to reach the South Pole."
+      },
+      {
+        "question": "what is the largest desert in the world?",
+        "answer": "The largest desert in the world is the Sahara Desert."
+      },
+      {
+        "question": "what is the chemical formula for table salt?",
+        "answer": "The chemical formula for table salt is NaCl."
+      },
+      {
+        "question": "who wrote 'Moby-Dick'?",
+        "answer": "'Moby-Dick' was written by Herman Melville."
+      },
+      {
+        "question": "How can I upload AI generated image?",
+        "answer": "Just click on the AI generate Image button below the Upload Image button."
+      },
+      {
+        "question": "what is the capital of Canada?",
+        "answer": "The capital of Canada is Ottawa."
+      },
+      {
+        "question": "who invented the telephone?",
+        "answer": "The telephone was invented by Alexander Graham Bell."
+      },
+      {
+        "question": "what is the largest bone in the human body?",
+        "answer": "The largest bone in the human body is the femur."
+      },
+      {
+        "question": "who painted 'The Last Supper'?",
+        "answer": "'The Last Supper' was painted by Leonardo da Vinci."
+      },
+      {
+        "question": "what is the chemical symbol for iron?",
+        "answer": "The chemical symbol for iron is Fe."
+      },
+      {
+        "question": "what is the capital of Germany?",
+        "answer": "The capital of Germany is Berlin."
+      },
+      {
+        "question": "who wrote 'The Great Gatsby'?",
+        "answer": "'The Great Gatsby' was written by F. Scott Fitzgerald."
+      },
+      {
+        "question": "what is the smallest bone in the human body?",
+        "answer": "The smallest bone in the human body is the stapes in the ear."
+      },
+      {
+        "question": "who discovered electricity?",
+        "answer": "Electricity was discovered by Benjamin Franklin."
+      },
+      {
+        "question": "what is the main gas found in the Earth's atmosphere?",
+        "answer": "The main gas found in the Earth's atmosphere is nitrogen."
+      },
+      {
+        "question": "what is the largest organ in the human body?",
+        "answer": "The largest organ in the human body is the skin."
+      },
+      {
+        "question": "who wrote 'Hamlet'?",
+        "answer": "'Hamlet' was written by William Shakespeare."
+      },
+      {
+        "question": "what is the chemical symbol for oxygen?",
+        "answer": "The chemical symbol for oxygen is O."
+      },
+      {
+        "question": "what is the capital of Japan?",
+        "answer": "The capital of Japan is Tokyo."
+      },
+      {
+        "question": "hi",
+        "answer": "hey,Whatsup!"
+      },
+      {
+        "question": "wow",
+        "answer": "Yeah"
+      },
+      {
+        "question": "where do you live?",
+        "answer": "I live in your computer"
+      },
+      {
+        "question": "do you know python language?",
+        "answer": "Python is a programming language , I know python a little bit."
+      },
+      {
+        "question": "what is VFX",
+        "answer": "VFX stands for visual effects. it is a technology that is used to create videos out of a combintion of live actions shots and digital imagaes.In action movies you would have seens the hero jumping from the helecopter or fighting with giant monsters, all thee scenes are created using VFX."
+      },
+      {
+        "question": "what is flask",
+        "answer": "flask is a python web framework."
+      },
+      {
+        "question": "What's up?",
+        "answer": "Doing well."
+      },
+      {
+        "question": "nice to meet you kulpi",
+        "answer": "Thank you so much."
+      },
+      {
+        "question": "yeah i know",
+        "answer": "That's fine"
+      },
+      {
+        "question": "How r u?",
+        "answer": "I am fine . what's about you? "
+      },
+      {
+        "question": "Hi",
+        "answer": "hello"
+      },
+      {
+        "question": "great",
+        "answer": "Yeah"
+      },
+      {
+        "question": "I am Subham, who has made you",
+        "answer": "Thank you for making me"
+      },
+      {
+        "question": "Hello.",
+        "answer": "Hello "
+      },
+      {
+        "question": "Wow",
+        "answer": "Yeah"
+      },
+      {
+        "question": "yeah",
+        "answer": "Hmm"
+      },
+      {
+        "question": "That's great.",
+        "answer": "Oh, yeah"
+      },
+      {
+        "question": "Hey.",
+        "answer": "Hey! How can I assist you?"
+      },
+      {
+        "question": "What is sqrt 64?",
+        "answer": "It is 8."
+      }
+    ]
+  }
